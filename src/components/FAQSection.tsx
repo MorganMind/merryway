@@ -59,7 +59,7 @@ export function FAQSection() {
     },
     {
       question: 'Does Merryway work offline?',
-      answer: 'Some features work offline, like viewing your saved plans and trails. For new suggestions and real-time updates, you\'ll need an internet connection.',
+      answer: 'Some features work offline, like viewing your saved plans and memories. For new suggestions and real-time updates, you\'ll need an internet connection.',
     },
     {
       question: 'Can I export my family\'s data?',

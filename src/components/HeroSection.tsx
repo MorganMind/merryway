@@ -326,7 +326,7 @@ export function HeroSection() {
                       whileHover={{ scale: 1.02, rotate: -1 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <h3 className="font-heading text-lg font-semibold text-text-ink mb-4">Trails</h3>
+                      <h3 className="font-heading text-lg font-semibold text-text-ink mb-4">Memories</h3>
                       <div className="text-center">
                         <div className="text-3xl font-bold text-primary mb-2">12</div>
                         <div className="text-text-slate">Adventures this month</div>

@@ -80,7 +80,7 @@ export default function PricingPage() {
       name: 'Everafter',
       price: '$14.99',
       period: '$149/yr',
-      description: 'All the magic. Full Plans → Itinerary (single & multi-day), Split Day / Meanwhile mode, Deep Research 6 briefs/mo + priority, MCP household-fit checks on every suggestion, cross-household share & collaborate, Memory Match unlimited, advanced Trails insights, early features + priority support.',
+      description: 'All the magic. Full Plans → Itinerary (single & multi-day), Split Day / Meanwhile mode, Deep Research 6 briefs/mo + priority, MCP household-fit checks on every suggestion, cross-household share & collaborate, Memory Match unlimited, advanced Memories insights, early features + priority support.',
       icon: Crown,
       color: 'text-accent-sparkle',
       bgColor: 'bg-accent-sparkle/10',
@@ -92,7 +92,7 @@ export default function PricingPage() {
         'MCP household-fit checks on every suggestion',
         'Cross-household share & collaborate',
         'Memory Match unlimited',
-        'Advanced Trails insights',
+        'Advanced Memories insights',
         'Early features + priority support'
       ],
       cta: 'Go Everafter',

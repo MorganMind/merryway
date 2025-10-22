@@ -37,7 +37,7 @@ export function HowItWorksSection() {
     },
     {
       icon: Trophy,
-      title: 'Trails',
+      title: 'Memories',
       description: 'Celebrate wins, track progress, and build your family\'s adventure story.',
       color: 'text-primary',
       bgColor: 'bg-primary/10',

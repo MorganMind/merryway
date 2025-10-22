@@ -210,8 +210,7 @@ export function TrailsSection() {
             className="text-4xl md:text-5xl font-bold text-ink font-heading mb-6 tracking-wide"
             variants={itemVariants}
           >
-            Your{' '}
-            <span className="text-primary">Trails</span>
+            <span className="text-primary">Memories Unlocked</span>
           </motion.h2>
           <motion.p
             className="text-xl text-gray-600 max-w-3xl mx-auto"
