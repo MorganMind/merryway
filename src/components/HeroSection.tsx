@@ -2,15 +2,14 @@
 
 import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion';
 import { Button } from './Button';
-import { Card } from './Card';
 import { Sparkle } from './Sparkle';
 import { useState, useRef, useEffect } from 'react';
 
 export function HeroSection() {
-  const [_showDemo, setShowDemo] = useState(false);
+  const [, setShowDemo] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress: _scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
   });
@@ -32,7 +31,7 @@ export function HeroSection() {
   const blur = useTransform(contentPositionMotion, [0, maxContentScroll], [0, 8]);
   
   // Content scrolls up while background stays fixed
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  // const contentY = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
   // Video playback control
   useEffect(() => {
@@ -71,7 +70,7 @@ export function HeroSection() {
 
     window.addEventListener('wheel', handleWheel, { passive: false });
     return () => window.removeEventListener('wheel', handleWheel);
-  }, [contentPosition]);
+  }, [contentPosition, contentPositionMotion]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -91,23 +90,10 @@ export function HeroSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
       },
     },
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30, rotate: -2 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotate: 0,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-      },
-    },
-  };
 
   return (
     <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -264,7 +250,7 @@ export function HeroSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 1, duration: 0.6 }}
                     >
-                      <p className="text-text-ink font-medium mb-4 text-lg">"What should we do this weekend?"</p>
+                      <p className="text-text-ink font-medium mb-4 text-lg">&ldquo;What should we do this weekend?&rdquo;</p>
                       <div className="flex flex-wrap gap-3">
                         <span className="px-3 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Family</span>
                         <span className="px-3 py-2 bg-accent-sage/10 text-accent-sage rounded-full text-sm font-medium">Outdoor</span>

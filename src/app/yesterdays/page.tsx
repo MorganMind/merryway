@@ -27,7 +27,6 @@ export default function YesterdaysPage() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
       },
     },
   };
@@ -125,7 +124,7 @@ export default function YesterdaysPage() {
               viewport={{ once: true, margin: '-50px' }}
             >
               <div className="grid gap-8">
-                {blogPosts.map((post, index) => (
+                {blogPosts.map((post) => (
                   <motion.article
                     key={post.id}
                     variants={itemVariants}

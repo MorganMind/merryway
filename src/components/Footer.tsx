@@ -24,7 +24,6 @@ export function Footer() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
       },
     },
   };
@@ -67,12 +66,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a
+                <Link
                   href="/#plans"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                 >
                   How it works
-                </a>
+                </Link>
               </li>
               <li>
                 <Link

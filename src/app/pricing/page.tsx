@@ -27,7 +27,6 @@ export default function PricingPage() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
       },
     },
   };
@@ -125,7 +124,7 @@ export default function PricingPage() {
                 className="text-xl text-gray-600 max-w-3xl mx-auto"
                 variants={itemVariants}
               >
-                Choose the plan that fits your family. Start free, upgrade when you're ready.
+                Choose the plan that fits your family. Start free, upgrade when you&apos;re ready.
               </motion.p>
             </motion.div>
           </div>
@@ -141,7 +140,7 @@ export default function PricingPage() {
               whileInView="visible"
               viewport={{ once: true, margin: '-50px' }}
             >
-              {pricingTiers.map((tier, index) => (
+              {pricingTiers.map((tier) => (
                 <motion.div
                   key={tier.name}
                   variants={itemVariants}
@@ -230,7 +229,7 @@ export default function PricingPage() {
                   </h3>
                   <p className="text-gray-600">
                     Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, 
-                    and we'll prorate any billing differences.
+                    and we&apos;ll prorate any billing differences.
                   </p>
                 </motion.div>
 

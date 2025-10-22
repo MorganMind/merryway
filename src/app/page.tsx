@@ -1,6 +1,5 @@
 import { Navigation } from '@/components/Navigation';
 import { HeroSection } from '@/components/HeroSection';
-import { HowItWorksSection } from '@/components/HowItWorksSection';
 import { MorganDemoSection } from '@/components/MorganDemoSection';
 import { PlansSection } from '@/components/PlansSection';
 import { TrailsSection } from '@/components/TrailsSection';

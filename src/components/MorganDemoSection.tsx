@@ -5,7 +5,8 @@ import { Card } from './Card';
 import { Button } from './Button';
 import { Sparkle } from './Sparkle';
 import { MessageCircle, MapPin, Clock, Users, CheckCircle, Heart, Star } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
+import Image from 'next/image';
 
 export function MorganDemoSection() {
   const [currentMessage, setCurrentMessage] = useState(0);
@@ -13,7 +14,7 @@ export function MorganDemoSection() {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   
   // Define the conversation flow
-  const conversation = [
+  const conversation = useMemo(() => [
     // Scene 1: Research
     { type: 'morgan', text: 'Here are two great options for your family:', delay: 1000 },
     { type: 'research-card', delay: 3000 },
@@ -29,7 +30,7 @@ export function MorganDemoSection() {
     // Scene 3: Review
     { type: 'morgan', text: 'I\'d love to hear how it went! This helps me suggest better activities for your family:', delay: 17000 },
     { type: 'review-card', delay: 19000 },
-  ];
+  ], []);
   
   // Progress through conversation with looping
   useEffect(() => {
@@ -71,7 +72,7 @@ export function MorganDemoSection() {
     startConversation();
     
     return () => timeouts.forEach(clearTimeout);
-  }, []);
+  }, [conversation]);
 
   // Auto-scroll to bottom whenever currentMessage changes
   useEffect(() => {
@@ -98,7 +99,6 @@ export function MorganDemoSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
       },
     },
   };
@@ -474,10 +474,10 @@ export function MorganDemoSection() {
               variants={itemVariants}
             >
               <h3 className="text-2xl font-bold text-ink font-heading mb-4">
-                Follow a script that's better than the movies...
+                Follow a script that&apos;s better than the movies...
               </h3>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Join thousands of families who've found their merry way with us
+                Join thousands of families who&apos;ve found their merry way with us
               </p>
             </motion.div>
 
@@ -507,9 +507,11 @@ export function MorganDemoSection() {
                     style={{ width: '300px' }}
                   >
                     <div className="bg-black rounded-lg overflow-hidden shadow-2xl h-80 relative">
-                      <img 
+                      <Image 
                         src="/thegreatoutdoors.png" 
                         alt="Family playing together"
+                        width={400}
+                        height={320}
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -532,7 +534,7 @@ export function MorganDemoSection() {
                     {/* Review content below the card */}
                     <div className="mt-3 space-y-2">
                       <p className="text-xs text-gray-600 leading-relaxed">
-                        "Merryway has transformed our chaotic weekends into organized adventures..."
+                        &ldquo;Merryway has transformed our chaotic weekends into organized adventures...&rdquo;
                       </p>
                       <div className="flex items-center justify-between">
                         <div className="text-xs text-gray-500">- Sarah M.</div>
@@ -555,9 +557,11 @@ export function MorganDemoSection() {
                     style={{ width: '300px' }}
                   >
                     <div className="bg-black rounded-lg overflow-hidden shadow-2xl h-80 relative">
-                      <img 
+                      <Image 
                         src="/memorylane.png" 
                         alt="Family creating memories"
+                        width={400}
+                        height={320}
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -580,7 +584,7 @@ export function MorganDemoSection() {
                     {/* Review content below the card */}
                     <div className="mt-3 space-y-2">
                       <p className="text-xs text-gray-600 leading-relaxed">
-                        "Finally, a family planner that actually works! The memory features..."
+                        &ldquo;Finally, a family planner that actually works! The memory features...&rdquo;
                       </p>
                       <div className="flex items-center justify-between">
                         <div className="text-xs text-gray-500">- David L.</div>
@@ -603,9 +607,11 @@ export function MorganDemoSection() {
                     style={{ width: '300px' }}
                   >
                     <div className="bg-black rounded-lg overflow-hidden shadow-2xl h-80 relative">
-                      <img 
+                      <Image 
                         src="/betteryesterdays.png" 
                         alt="Family having fun together"
+                        width={400}
+                        height={320}
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -628,7 +634,7 @@ export function MorganDemoSection() {
                     {/* Review content below the card */}
                     <div className="mt-3 space-y-2">
                       <p className="text-xs text-gray-600 leading-relaxed">
-                        "The memory match game keeps our whole family engaged..."
+                        &ldquo;The memory match game keeps our whole family engaged...&rdquo;
                       </p>
                       <div className="flex items-center justify-between">
                         <div className="text-xs text-gray-500">- Emily R.</div>
@@ -651,9 +657,11 @@ export function MorganDemoSection() {
                     style={{ width: '300px' }}
                   >
                     <div className="bg-black rounded-lg overflow-hidden shadow-2xl h-80 relative">
-                      <img 
+                      <Image 
                         src="/kitchenstories.png" 
                         alt="Family cooking together"
+                        width={400}
+                        height={320}
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -676,7 +684,7 @@ export function MorganDemoSection() {
                     {/* Review content below the card */}
                     <div className="mt-3 space-y-2">
                       <p className="text-xs text-gray-600 leading-relaxed">
-                        "Cooking together has become our favorite family tradition..."
+                        &ldquo;Cooking together has become our favorite family tradition...&rdquo;
                       </p>
                       <div className="flex items-center justify-between">
                         <div className="text-xs text-gray-500">- Maria S.</div>
@@ -699,9 +707,11 @@ export function MorganDemoSection() {
                     style={{ width: '300px' }}
                   >
                     <div className="bg-black rounded-lg overflow-hidden shadow-2xl h-80 relative">
-                      <img 
+                      <Image 
                         src="https://images.pexels.com/photos/1181343/pexels-photo-1181343.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop" 
                         alt="Family reading together"
+                        width={400}
+                        height={320}
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -724,7 +734,7 @@ export function MorganDemoSection() {
                     {/* Review content below the card */}
                     <div className="mt-3 space-y-2">
                       <p className="text-xs text-gray-600 leading-relaxed">
-                        "Reading together creates the most magical family moments..."
+                        &ldquo;Reading together creates the most magical family moments...&rdquo;
                       </p>
                       <div className="flex items-center justify-between">
                         <div className="text-xs text-gray-500">- James K.</div>
@@ -747,9 +757,11 @@ export function MorganDemoSection() {
                     style={{ width: '300px' }}
                   >
                     <div className="bg-black rounded-lg overflow-hidden shadow-2xl h-80 relative">
-                      <img 
+                      <Image 
                         src="/thegreatoutdoors.png" 
                         alt="Family outdoor adventure"
+                        width={400}
+                        height={320}
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
@@ -772,7 +784,7 @@ export function MorganDemoSection() {
                     {/* Review content below the card */}
                     <div className="mt-3 space-y-2">
                       <p className="text-xs text-gray-600 leading-relaxed">
-                        "Exploring nature together brings our family closer than ever..."
+                        &ldquo;Exploring nature together brings our family closer than ever...&rdquo;
                       </p>
                       <div className="flex items-center justify-between">
                         <div className="text-xs text-gray-500">- Lisa T.</div>

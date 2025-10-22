@@ -23,7 +23,6 @@ export function Sparkle({ className = '', size = 'md', animated = true }: Sparkl
       transition: {
         duration: 1.5,
         repeat: Infinity,
-        ease: 'easeInOut',
       }
     }
   };

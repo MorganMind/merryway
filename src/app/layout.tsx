@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   description: defaultSEO.description,
   openGraph: defaultSEO.openGraph,
   twitter: defaultSEO.twitter,
-  other: defaultSEO.additionalMetaTags,
 };
 
 export default function RootLayout({

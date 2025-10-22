@@ -1,6 +1,4 @@
-import { DefaultSeoProps } from 'next-seo';
-
-export const defaultSEO: DefaultSeoProps = {
+export const defaultSEO = {
   title: 'Merryway — Family plans, done happily.',
   description: 'Merryway is a joyful, privacy-safe planner that suggests what fits your family now, drafts itineraries in chat, and saves your wins—like a modern Mary Poppins.',
   canonical: 'https://merryway.app',

@@ -1,9 +1,11 @@
 'use client';
 
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from './Card';
 import { Sparkle } from './Sparkle';
 import { Trophy, MapPin, Star, TrendingUp, Heart, Users } from 'lucide-react';
+import Image from 'next/image';
 
 export function TrailsSection() {
   const containerVariants = {
@@ -24,7 +26,6 @@ export function TrailsSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
       },
     },
   };
@@ -262,7 +263,7 @@ export function TrailsSection() {
                         <Card variant="elevated" className="p-8 group">
                           <div className="flex items-center gap-4">
                             <div className={`w-16 h-16 ${item.bgColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                              <item.icon className={`w-6 h-6 ${item.color}`} />
+                              {item.icon && React.createElement(item.icon, { className: `w-6 h-6 ${item.color}` })}
                             </div>
                             
                             <div className="flex-1">
@@ -307,7 +308,7 @@ export function TrailsSection() {
                               <span className="text-white text-sm font-bold">M</span>
                             </div>
                             <div className="flex-1">
-                              <div className="font-semibold text-ink text-sm">Morgan's Family</div>
+                              <div className="font-semibold text-ink text-sm">Morgan&apos;s Family</div>
                               <div className="text-xs text-gray-500">{item.date}</div>
                             </div>
                             <div className="text-xs text-gray-500">{item.location}</div>
@@ -315,9 +316,11 @@ export function TrailsSection() {
                           
                           {/* Photo */}
                           <div className="relative">
-                            <img 
-                              src={item.image} 
-                              alt={item.caption}
+                            <Image 
+                              src={item.image || '/placeholder.jpg'} 
+                              alt={item.caption || 'Family photo'}
+                              width={400}
+                              height={320}
                               className="w-full h-80 object-cover"
                             />
                             <div className="absolute top-2 right-2">
@@ -337,7 +340,7 @@ export function TrailsSection() {
                               <span className="text-sm font-semibold text-ink">{item.likes} likes</span>
                             </div>
                             <div className="text-sm text-ink">
-                              <span className="font-semibold">Morgan's Family</span> {item.caption}
+                              <span className="font-semibold">Morgan&apos;s Family</span> {item.caption}
                             </div>
                           </div>
                         </Card>
