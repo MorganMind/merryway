@@ -39,29 +39,13 @@ export function EmailCaptureSection() {
     setStatus('loading');
     setMessage('');
 
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setStatus('success');
-        setMessage('Welcome to the Merryway family! We\'ll be in touch soon.');
-        setEmail('');
-      } else {
-        setStatus('error');
-        setMessage(data.error || 'Something went wrong. Please try again.');
-      }
-    } catch {
-      setStatus('error');
-      setMessage('Network error. Please check your connection and try again.');
-    }
+    // Placeholder for future email integration
+    // TODO: Integrate with email service (Mailchimp, ConvertKit, etc.)
+    setTimeout(() => {
+      setStatus('success');
+      setMessage('Thanks for your interest! We\'ll be in touch soon.');
+      setEmail('');
+    }, 1000);
   };
 
   return (
